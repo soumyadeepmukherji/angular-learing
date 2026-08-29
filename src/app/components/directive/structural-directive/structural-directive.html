@@ -1,0 +1,66 @@
+<section class="angular-if grid grid-cols-4 gap-4">
+    <div class="hide-show">
+        <div *ngIf="isBoxVisible" class="box bg-red-500 w-100% h-50 
+            flex items-center justify-center 
+            text-4xl font-bold">
+            Box
+        </div>
+        <div class="btn-wrap">
+            <button class="primary-btn" (click)="hide()">Hide</button>
+            <button class="secondary-btn" (click)="show()">Show</button>
+        </div>
+    </div>
+
+    <div class="toggle">
+        <div *ngIf="isToggle" class="w-100% h-50 bg-stone-800
+            flex items-center justify-center 
+            text-4xl font-bold text-white">
+            Toggle Menu
+        </div>
+        <div class="btn-wrap">
+            <button class="primary-btn" (click)="toggle()">Toggle</button>
+        </div>
+    </div>
+
+    <div class="match">
+        <div class="w-100% h-50 bg-rose-600
+        flex items-center justify-center
+        text-4xl font-bold text-white">
+            <h2 *ngIf="playerOne != playerTwo">Not Matched</h2>
+            <h2 *ngIf="playerOne == playerTwo">Matched !!</h2>
+        </div>
+
+        <div class="btn-wrap">
+            <input [(ngModel)]="playerOne" type="number" placeholder="Player One">
+            <input [(ngModel)]="playerTwo" type="number" placeholder="Player Two">
+        </div>
+
+    </div>
+
+    <div class="myExp">
+        <div class="w-100% h-50 bg-linear-[135deg] from-orange-500 from-40% via-olive-100 to-green-800 to-60%
+        flex items-center justify-center
+        text-4xl font-bold text-indigo-800">
+            {{cityTrack}}
+        </div>
+        <select [(ngModel)]="cityTrack" class=" w-80 border mt-4">
+            <option value="" disabled selected>Select City</option>
+            <option *ngFor="let city of cityLang" value="{{city.lang}}">{{city.name}}</option>
+        </select>
+    </div>
+</section>
+
+<section class="angular-for mt-4 grid grid-cols-4 gap-4">
+    <ul class="menu">
+        <li *ngFor="let item of foodArray">{{item}}</li>
+    </ul>
+
+
+    <select class="h-1/2 border">
+        <option value="" disabled selected>Select City</option>
+        <option *ngFor="let city of cityArray" value="{{city}}">{{city}}</option>
+    </select>
+
+
+    
+</section>

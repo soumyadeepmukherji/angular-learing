@@ -1,3 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+body{
+    @apply px-5
+}
+
+.btn-wrap{
+    @apply flex justify-center gap-4 mt-4
+}
+
+.primary-btn{
+    @apply bg-green-700 px-3 py-2 rounded text-[14px] font-bold text-white cursor-pointer transition hover:bg-green-900
+}
+
+.secondary-btn{
+    @apply bg-red-600 px-3 py-2 rounded text-[14px] font-bold text-white cursor-pointer transition hover:bg-red-800
+}
+
+ul{
+    @apply px-2
+}

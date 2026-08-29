@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { StructuralDirective } from './components/directive/structural-directive/structural-directive';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [StructuralDirective],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
