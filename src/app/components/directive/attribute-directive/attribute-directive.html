@@ -1,0 +1,55 @@
+<h2 class="text-3xl mt-6">Attribute Directive</h2>
+<section class="mt-8 grid grid-cols-4 gap-2">
+    <div>
+    <div class="box w-100% h-50 
+        flex items-center justify-center 
+        text-4xl font-bold" [ngClass]="boxColor">
+        Box
+    </div>
+    <div class="btn-wrap">
+        <button class="primary-btn" (click)="changeToGreen()">Green</button>
+        <button class="secondary-btn" (click)="changeToRed()">Red</button>
+    </div>
+    </div>
+
+    <div>
+    <div class="box w-100% h-50 
+        flex items-center justify-center 
+        text-4xl font-bold" [ngClass]="isActive ? 'green': 'red' ">
+        Box
+    </div>
+    <div class="btn-wrap">
+        <button class="primary-btn" (click)="changeColor()">Change</button>
+    </div>
+    </div>
+
+    <div class="match">
+        <div class="w-100% h-50
+        flex items-center justify-center
+        text-4xl font-bold text-white" [ngClass]="num1 == num2 ? 'bg-rose-500' : 'bg-zinc-900'">
+            Color
+        </div>
+
+        <div class="btn-wrap">
+            <input [(ngModel)]="num1" type="text" placeholder=" One">
+            <input [(ngModel)]="num2" type="text" placeholder=" Two">
+        </div>
+
+    </div>
+
+    <div>
+        <div class="w-100% h-50
+        flex items-center justify-center
+        text-4xl font-bold text-white" [ngStyle]="{'background-color':'red'}">
+            Color
+        </div>
+    </div>
+
+    <div>
+        <div class="w-100% h-50
+        flex items-center justify-center
+        text-4xl font-bold text-white" [ngStyle]="myStyle">
+            Custome
+        </div>
+    </div>
+</section>

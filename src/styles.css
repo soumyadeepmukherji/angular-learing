@@ -21,3 +21,11 @@ body{
 ul{
     @apply px-2
 }
+
+.green{
+    @apply bg-green-900
+}
+
+.red{
+    @apply bg-red-600
+}
