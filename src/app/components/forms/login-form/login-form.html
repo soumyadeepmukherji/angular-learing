@@ -1,0 +1,58 @@
+<section class="loginForm mt-8">
+    
+    <form class="templateForm" #loginForm="ngForm" (ngSubmit)="submitForm(loginForm)">
+
+        <h1 class="title">Login</h1>
+
+        <div class="fieldWrap">
+            <label for="username">User Name</label>
+            <input type="text" name="username" [(ngModel)]="userObj.userName" #userName="ngModel" required>
+            @if(userName.invalid && (userName.touched || loginForm.submitted)){
+                <p>Fill the Field</p> 
+            }
+        </div>
+        <div class="fieldWrap">
+            <label for="email">Email ID</label>
+            <input type="email" name="email" [(ngModel)]="userObj.email" #email="ngModel" required email>
+            @if(email.invalid && (email.touched || loginForm.submitted)){
+                @if(email.errors?.['required']){
+                    <p>Fill the Field</p>
+                }  
+            }
+            @else if (email.errors?.['email']) {
+                <p>Invalid Email id</p>
+            }
+        </div>
+        <div class="fieldWrap">
+            <label for="password">Password</label>
+            <input type="password" name="password" [(ngModel)]="userObj.password" #password="ngModel" required>
+            @if(password.invalid && (password.touched || loginForm.submitted)){
+                <p>Fill the Field</p> 
+            }
+        </div>
+        <div class="fieldWrap">
+            <label for="role">Role</label>
+            <select name="role" [(ngModel)]="userObj.role" #role="ngModel" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="Developer">Developer</option>
+                <option value="Student">Student</option>
+            </select>
+            @if(role.invalid && (role.touched || loginForm.submitted)){
+                <p>Fill the Field</p> 
+            }
+        </div>
+        <div class="fieldWrap flex items-center gap-1.5">
+            <input type="checkbox" name="terms" [(ngModel)]="userObj.isAcceptTerms" #terms="ngModel" required>
+            <label for="terms">accept Terms & conditions</label>
+            @if(terms.invalid && (terms.touched || loginForm.submitted)){
+                <p>Check the box</p> 
+            }
+        </div>
+
+        <button type="submit" class="primary-btn mt-3" >Submit</button>
+    </form>
+
+    <div class="mt-8">
+        {{formValue | json}}
+    </div>
+</section>

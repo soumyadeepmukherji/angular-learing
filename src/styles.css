@@ -2,7 +2,7 @@
 
 @import 'tailwindcss';
 
-body{
+main{
     @apply px-5
 }
 
@@ -28,4 +28,34 @@ ul{
 
 .red{
     @apply bg-red-600
+}
+
+.user a{
+    @apply border rounded p-4 w-4/5 text-center text-2xl font-bold
+}
+
+.title{
+    @apply text-3xl text-black font-bold text-center mb-4
+}
+
+.templateForm{
+    @apply flex flex-col w-100 mx-auto border border-zinc-500 p-8 rounded-3xl shadow-2xl shadow-zinc-700
+}
+.fieldWrap{
+    @apply mb-2.5
+}
+.fieldWrap label{
+    @apply text-[16px] font-medium mb-1.5
+}
+
+.fieldWrap input, .fieldWrap select{
+    @apply w-full border border-stone-600 px-1.5 py-2 rounded
+}
+
+input[type="checkbox"]:not(.field-wrap input) {
+    @apply accent-green-500 border-gray-300 rounded w-5 h-5
+}
+
+.fieldWrap p{
+    @apply text-rose-700 text-[14px]
 }
