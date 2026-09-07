@@ -59,3 +59,7 @@ input[type="checkbox"]:not(.field-wrap input) {
 .fieldWrap p{
     @apply text-rose-700 text-[14px]
 }
+
+.formGrid{
+    @apply grid grid-cols-2 gap-3
+}

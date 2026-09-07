@@ -1,1 +1,63 @@
-<p>register-form works!</p>
+<section class="registerForm mt-8">
+    
+    <form class="" [formGroup]="registerForm">
+
+        <h1 class="title">Registration Form</h1>
+
+        <div class="formGrid">
+
+        <div class="fieldWrap">
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" formControlName="firstName">
+        </div>
+        <div class="fieldWrap">
+            <label for="lname">First Name</label>
+            <input type="text" name="lname" formControlName="lastName">
+        </div>
+        <div class="fieldWrap">
+            <label for="email">Email ID</label>
+            <input type="email" name="email" formControlName="emailId">
+            @if(registerForm.controls['emailId'].errors?.['required']){
+                <p>This Field is required</p>
+            }
+            @else if (registerForm.controls['emailId'].errors?.['email']) {
+                <p>Type valid Email</p>
+            }
+        </div>
+        <div class="fieldWrap">
+            <label for="password">Password</label>
+            <input type="password" name="password" formControlName="password">
+        </div>
+        <div class="fieldWrap">
+            <label for="role">Role</label>
+            <select name="role" formControlName="role">
+                <option value="" disabled selected>Select your role</option>
+                <option value="Developer">Developer</option>
+                <option value="Student">Student</option>
+            </select>
+        </div>
+         <div class="fieldWrap">
+            <label for="city">City</label>
+            <input type="text" name="city" formControlName="city">
+        </div>
+        <div class="fieldWrap">
+            <label for="state">State</label>
+            <input type="text" name="state" formControlName="state">
+        </div>
+        <div class="fieldWrap">
+            <label for="zcode">Zipcode</label>
+            <input type="text" name="zcode" formControlName="zipCode">
+        </div>
+        <div class="fieldWrap flex items-center gap-1.5">
+            <input type="checkbox" name="terms" formControlName="isAccept">
+            <label for="terms">accept Terms & conditions</label>
+        </div>
+
+        </div>
+        <button type="submit" class="primary-btn mt-3" (click)="onSave()">Submit</button>
+    </form>
+
+    <div class="mt-8">
+        {{formValue | json}}
+    </div>
+</section>
