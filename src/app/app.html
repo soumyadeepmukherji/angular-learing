@@ -1,5 +1,8 @@
-<nav>
-<ul class="flex bg-black text-white gap-5 py-2">
+<nav class="bg-black flex  text-white items-center justify-between px-4">
+<ul class="flex  text-white gap-5 py-2">
+    <li>
+        <a routerLink="">Home</a>
+    </li>
     <li>
         <a routerLink="attr-dir">AttributeDiective</a>
     </li>
@@ -12,8 +15,23 @@
     <li>
         <a routerLink="User-details">login/register</a>
     </li>
+    <li>
+        <a routerLink="life-cycle">Life Cycle</a>
+    </li>
 </ul>
+<div class="btn-warp">
+    <button class="bg-white px-2 py-1.5 text-black rounded my-2" (click)="onClick()">login</button>
+    <button class="bg-white px-2 py-1.5 text-black rounded my-2" (click)="logout()">LogOut</button>
+    <ng-container #container>
+
+    </ng-container>
+    
+</div>
 </nav>
+
+<ng-template #View>
+    <p>Welcome {{userName}}</p>
+</ng-template>
 
 <main>
 <router-outlet/>

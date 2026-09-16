@@ -25,5 +25,6 @@ export class RegisterForm {
 
   onSave(){
     this.formValue = this.registerForm.value
+    localStorage.setItem('credentials',JSON.stringify(this.formValue))
   }
 }
