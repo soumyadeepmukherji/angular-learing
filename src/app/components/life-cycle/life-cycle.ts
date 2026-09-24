@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,24 +6,18 @@ import { Component, DoCheck, OnDestroy } from '@angular/core';
   styleUrl: './life-cycle.css',
   templateUrl: './life-cycle.html',
 })
-export class LifeCycle implements DoCheck,OnDestroy {
+export class LifeCycle implements OnInit  {
 
-  count = 0
-
+  // It get Executed First
   constructor(){
-    console.log('Component run')
+    console.log('Constructor')
   }
 
-  inc(){
-    this.count = this.count + 1
+  // It is executed once after Initialization
+  ngOnInit(): void {
+    console.log("ngOnInit")
   }
 
-  ngDoCheck(){
-    console.log('Checked')
-  }
+  
 
-  ngOnDestroy(): void {
-    console.log('Component removed');
-    
-  }
 }

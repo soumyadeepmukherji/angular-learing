@@ -1,13 +1,22 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeadingBox } from '../heading-box/heading-box';
 
 @Component({
-  imports: [],
+  imports: [HeadingBox],
   selector: 'app-my-component',
   styleUrl: './my-component.css',
   templateUrl: './my-component.html',
 })
 export class MyComponent {
+
+  heading = 'Product Listing'
+
+  style = {'background': 'green', 'color': 'white', 'padding': '20px 10px',}
+
+  resiveMsg(message : string){
+    console.log(message)
+  }
 
   router = inject(Router)
 

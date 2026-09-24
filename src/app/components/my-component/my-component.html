@@ -1,4 +1,4 @@
-<h1 class="title">Product List</h1>
+<app-heading-box [heading]="heading" [style]="style" (headClick)="resiveMsg($event)"></app-heading-box>
 
 <div class="grid grid-cols-3 gap-8">
     @for(items of products; track $index){

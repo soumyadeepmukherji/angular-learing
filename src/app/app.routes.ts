@@ -13,7 +13,7 @@ export const routes: Routes = [
     {
         path:'',
         component: MyComponent,
-        canActivate: [authGuard]
+        // canActivate: [authGuard]
     },
     {
         path:'attr-dir',
