@@ -8,6 +8,7 @@ import { RegisterForm } from './components/forms/register-form/register-form';
 import { MyComponent } from './components/my-component/my-component';
 import { LifeCycle } from './components/life-cycle/life-cycle';
 import { authGuard } from './guards/auth-guard';
+import { RxjsBase } from './Rxjs/rxjs-base/rxjs-base';
 
 export const routes: Routes = [
     {
@@ -45,5 +46,9 @@ export const routes: Routes = [
     {
         path:'life-cycle',
         component: LifeCycle
+    },
+    {
+        path:'rxjs',
+        component: RxjsBase
     },
 ];

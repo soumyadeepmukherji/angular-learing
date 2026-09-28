@@ -10,6 +10,12 @@ import { HeadingBox } from '../heading-box/heading-box';
 })
 export class MyComponent {
 
+  obj = [{
+    id: 1,
+    name: 'banana',
+    price: 20
+  }]
+
   heading = 'Product Listing'
 
   style = {'background': 'green', 'color': 'white', 'padding': '20px 10px',}

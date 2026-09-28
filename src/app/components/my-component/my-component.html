@@ -9,3 +9,16 @@
     </div>
     }
 </div>
+
+<!-- <ul>
+    <li>{{obj.id}}</li>
+    <li>{{obj.name}}</li>
+    <li>{{obj.price}}</li>
+</ul> -->
+<ul>
+@for(item of obj; track $index){
+    <li>{{item.id}}</li>
+    <li>{{item.name}}</li>
+    <li>{{item.price}}</li>
+}
+</ul>
